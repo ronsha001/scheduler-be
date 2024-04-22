@@ -1,0 +1,28 @@
+version: "3"
+services:
+
+  # api:
+  #   build: .
+  #   container_name: api
+  #   restart: always
+  #   environment:
+  #     MONGODB_URI: mongodb://root:example@mongo:27017/
+  #   ports:
+  #     - 3001:5000
+  #   depends_on:
+  #     - mongo
+  
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+    volumes:
+      - /home/develeap/Projects/scheduler-be/mongo-data:/data/db
+
+# volumes:
+#   devtube-mongo:
